@@ -1,4 +1,5 @@
 <?php /* @var $this Controller */ ?>
+<?php $this->beginContent('//layouts/main'); ?>
   <section class="vbox">
     <header class="bg-white-only header header-md navbar navbar-fixed-top-xs">
       <div class="navbar-header aside bg-info nav-xs">
@@ -101,4 +102,4 @@
       </div>      
     </header>
 	<?php echo $content; ?>
-<?php //echo "ender"; ?>
+<?php $this->endContent(); ?>

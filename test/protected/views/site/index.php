@@ -3,9 +3,11 @@
 <head>  
 <?php require 'head.php';?>
 </head>
-<frameset ></frameset>
 <body class="">
-
+<section class="vbox">
+    <header class="bg-white-only header header-md navbar navbar-fixed-top-xs">
+      <div class="navbar-header aside bg-info nav-xs">
+    <?php require 'header.php';?>
     <section>
       <section class="hbox stretch">
         <!-- .aside -->
@@ -64,7 +66,29 @@
                       
                    <?php  }?>   
                  
-                  
+                  <div class="col-md-7">
+                      <h3 class="font-thin">New Songs</h3>
+                      <div class="row row-sm">
+                          <?php foreach($new as $n){?>  
+                        <div class="col-xs-6 col-sm-3">
+                          <div class="item">
+                            <div class="pos-rlt">
+                              <div class="item-overlay opacity r r-2x bg-black">
+                                <div class="center text-center m-t-n">
+                                  <a href="#"><i class="fa fa-play-circle i-2x"></i></a>
+                                </div>
+                              </div>
+                              <a href="#"><img src="<?PHP echo IMG_URL.$n['player_cover']?>" alt="" class="r r-2x img-full"></a>
+                            </div>
+                            <div class="padder-v">
+                              <a href="#" class="text-ellipsis"><?PHP echo $n['music_name']?></a>
+                              <a href="#" class="text-ellipsis text-xs text-muted"><?PHP echo $n['music_men']?></a>
+                            </div>
+                          </div>
+                        </div>
+                          <?php }?>
+                      </div>    
+                    </div>
                   
                   
                   
@@ -73,18 +97,18 @@
                     <div class="col-md-5">
                       <h3 class="font-thin">Top Songs</h3>
                       <div class="list-group bg-white list-group-lg no-bg auto">
-                          
+                      <?php foreach($top as $t){ $i =1;?>    
                         <a href="#" class="list-group-item clearfix">
                           <span class="pull-right h2 text-muted m-l">1</span>
                           <span class="pull-left thumb-sm avatar m-r">
-                            <img src="<?PHP echo IMG_URL;?>a4.png" alt="...">
+                            <img src="<?PHP echo IMG_URL.$t['player_cover']?>" alt="...">
                           </span>
                           <span class="clear">
-                            <span>Little Town</span>
-                            <small class="text-muted clear text-ellipsis">by Chris Fox</small>
+                            <span><?PHP echo $t['music_name']?></span>
+                            <small class="text-muted clear text-ellipsis"><?PHP echo $t['music_men']?></small>
                           </span>
                         </a>
-                        
+                      <?php $i++; }?>
                           
                       </div>
                     </div>

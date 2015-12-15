@@ -10,7 +10,7 @@
         <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
           <i class="icon-list"></i>
         </a>
-        <a href="index.html" class="navbar-brand text-lt">
+        <a href="index.php" class="navbar-brand text-lt">
           <i class="icon-earphones"></i>
           <img src="<?PHP echo IMG_URL;?>logo.png" alt="." class="hide">
           <span class="hidden-nav-xs m-l-sm">Musik</span>
@@ -575,15 +575,15 @@
       </section>
     </section>    
   </section>
-  <script src="js/jquery.min.js"></script>
+  <script src="<?PHP echo JS_URL;?>jquery.min.js"></script>
   <!-- Bootstrap -->
-  <script src="js/bootstrap.js"></script>
+  <script src="<?PHP echo JS_URL;?>bootstrap.js"></script>
   <!-- App -->
-  <script src="js/app.js"></script>  
-  <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="js/app.plugin.js"></script>
-  <script type="text/javascript" src="js/jPlayer/jquery.jplayer.min.js"></script>
-  <script type="text/javascript" src="js/jPlayer/add-on/jplayer.playlist.min.js"></script>
-  <script type="text/javascript" src="js/jPlayer/demo.js"></script>
+  <script src="<?PHP echo JS_URL;?>app.js"></script>  
+  <script src="<?PHP echo JS_URL;?>slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="<?PHP echo JS_URL;?>app.plugin.js"></script>
+  <script type="text/javascript" src="<?PHP echo JS_URL;?>jPlayer/jquery.jplayer.min.js"></script>
+  <script type="text/javascript" src="<?PHP echo JS_URL;?>jPlayer/add-on/jplayer.playlist.min.js"></script>
+  <script type="text/javascript" src="<?PHP echo JS_URL;?>jPlayer/demo.js"></script>
 </body>
 </html>

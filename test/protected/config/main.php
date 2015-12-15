@@ -20,15 +20,14 @@ return array(
 	),
 
 	'modules'=>array(
-		// uncomment the following to enable the Gii tool
-		/*
+//		 uncomment the following to enable the Gii tool
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'Enter Your Password Here',
+			'password'=>'123654',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
-		*/
+                'houtai',
 	),
 
 	// application components
@@ -52,14 +51,7 @@ return array(
 		*/
 
 		// database settings are configured in database.php
-        'db'=>array(
-                    'connectionString' => 'mysql:host=127.0.0.1;dbname=ziiwo',
-                    'emulatePrepare' => true,
-                    'username' => 'root',
-                    'password' => '123654',
-                    'charset' => 'utf8',
-                    'tablePrefix' => 'zii_',   //加入前缀名称fc_
-                    ),
+		'db'=>require(dirname(__FILE__).'/database.php'),
 
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors

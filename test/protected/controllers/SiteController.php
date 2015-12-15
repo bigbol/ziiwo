@@ -43,9 +43,11 @@ class SiteController extends Controller
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
                $info = $this->Music_info->findAll(); 
+               $top = $this->Music_info->findAll(' 1 order by music_clicks DESC limit 5'); 
+               $new = $this->Music_info->findAll(array("order"=>"music_pubtime DESC","limit"=>"8")); 
                
-//               var_dump($info);
-		$this->render('index',array('info'=>$info));
+//               var_dump($top);
+		$this->renderPartial('index',array('info'=>$info,'top'=>$top,'new'=>$new));
 	}
         
         public function actionGenres()
@@ -76,6 +78,12 @@ class SiteController extends Controller
 		$this->renderPartial('events');
 	}
         
+        public function actionVideo_detail()
+	{
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		$this->renderPartial('video_detail');
+	}
 
 	/**
 	 * This is the action to handle external exceptions.

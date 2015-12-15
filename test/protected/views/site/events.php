@@ -7,113 +7,19 @@
   <section class="vbox">
     <header class="bg-white-only header header-md navbar navbar-fixed-top-xs">
       <div class="navbar-header aside bg-primary nav-xs">
-        <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
-          <i class="icon-list"></i>
-        </a>
-        <a href="index.html" class="navbar-brand text-lt">
-          <i class="icon-earphones"></i>
-          <img src="<?PHP echo IMG_URL;?>logo.png" alt="." class="hide">
-          <span class="hidden-nav-xs m-l-sm">Musik</span>
-        </a>
-        <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user">
-          <i class="icon-settings"></i>
-        </a>
-      </div>      <ul class="nav navbar-nav hidden-xs">
-        <li>
-          <a href="#nav,.navbar-header" data-toggle="class:nav-xs,nav-xs" class="text-muted">
-            <i class="fa fa-indent text"></i>
-            <i class="fa fa-dedent text-active"></i>
-          </a>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" role="search">
-        <div class="form-group">
-          <div class="input-group">
-            <span class="input-group-btn">
-              <button type="submit" class="btn btn-sm bg-white btn-icon rounded"><i class="fa fa-search"></i></button>
-            </span>
-            <input type="text" class="form-control input-sm no-border rounded" placeholder="Search songs, albums...">
-          </div>
-        </div>
-      </form>
-      <div class="navbar-right ">
-        <ul class="nav navbar-nav m-n hidden-xs nav-user user">
-          <li class="hidden-xs">
-            <a href="#" class="dropdown-toggle lt" data-toggle="dropdown">
-              <i class="icon-bell"></i>
-              <span class="badge badge-sm up bg-danger count">2</span>
-            </a>
-            <section class="dropdown-menu aside-xl animated fadeInUp">
-              <section class="panel bg-white">
-                <div class="panel-heading b-light bg-light">
-                  <strong>You have <span class="count">2</span> notifications</strong>
-                </div>
-                <div class="list-group list-group-alt">
-                  <a href="#" class="media list-group-item">
-                    <span class="pull-left thumb-sm">
-                      <img src="<?PHP echo IMG_URL;?>a0.png" alt="..." class="img-circle">
-                    </span>
-                    <span class="media-body block m-b-none">
-                      Use awesome animate.css<br>
-                      <small class="text-muted">10 minutes ago</small>
-                    </span>
-                  </a>
-                  <a href="#" class="media list-group-item">
-                    <span class="media-body block m-b-none">
-                      1.0 initial released<br>
-                      <small class="text-muted">1 hour ago</small>
-                    </span>
-                  </a>
-                </div>
-                <div class="panel-footer text-sm">
-                  <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
-                  <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a>
-                </div>
-              </section>
-            </section>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle bg clear" data-toggle="dropdown">
-              <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
-                <img src="<?PHP echo IMG_URL;?>a0.png" alt="...">
-              </span>
-              John.Smith <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu animated fadeInRight">            
-              <li>
-                <span class="arrow top"></span>
-                <a href="#">Settings</a>
-              </li>
-              <li>
-                <a href="profile.html">Profile</a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="badge bg-danger pull-right">3</span>
-                  Notifications
-                </a>
-              </li>
-              <li>
-                <a href="docs.html">Help</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="modal.lockme.html" data-toggle="ajaxModal" >Logout</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>      
-    </header>
+          <?php require 'header.php';?>
     <section>
       <section class="hbox stretch">
         <!-- .aside -->
-        <?php require 'aside.php';?>
+       <?php require 'aside.php';?>
         <!-- /.aside -->
         <section id="content">
           <section class="vbox">
           <section class="scrollable">
             <div id="masonry" class="pos-rlt animated fadeInUpBig">
+                
+                
+                
               <div class="item">
                 <div class="carousel slide auto" data-interval="3000">
                   <div class="carousel-inner">
@@ -146,6 +52,9 @@
                   </div>
                 </div>
               </div>
+                
+                
+                
               <div class="item">
                 <div class="item-overlay gd animated fadeInUp wrapper bg-info">
                   <p class="text-white">Watch later</p>
@@ -337,17 +246,19 @@
       </section>
     </section>    
   </section>
-  <script src="js/jquery.min.js"></script>
+    <script src="<?PHP echo JS_URL;?>jquery.min.js"></script>
   <!-- Bootstrap -->
-  <script src="js/bootstrap.js"></script>
+  <script src="<?PHP echo JS_URL;?>bootstrap.js"></script>
   <!-- App -->
-  <script src="js/app.js"></script>  
-  <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="js/masonry/tiles.min.js"></script>
-  <script src="js/masonry/demo.js"></script>
-  <script src="js/app.plugin.js"></script>
-  <script type="text/javascript" src="js/jPlayer/jquery.jplayer.min.js"></script>
-  <script type="text/javascript" src="js/jPlayer/add-on/jplayer.playlist.min.js"></script>
-  <script type="text/javascript" src="js/jPlayer/demo.js"></script>
+  <script src="<?PHP echo JS_URL;?>app.js"></script>  
+  <script src="<?PHP echo JS_URL;?>slimscroll/jquery.slimscroll.min.js"></script>
+  <script src="<?PHP echo JS_URL;?>masonry/tiles.min.js"></script>
+  <script src="<?PHP echo JS_URL;?>masonry/demo.js"></script>
+  
+    <script src="<?PHP echo JS_URL;?>app.plugin.js"></script>
+  <script type="text/javascript" src="<?PHP echo JS_URL;?>jPlayer/jquery.jplayer.min.js"></script>
+  <script type="text/javascript" src="<?PHP echo JS_URL;?>jPlayer/add-on/jplayer.playlist.min.js"></script>
+  <script type="text/javascript" src="<?PHP echo JS_URL;?>jPlayer/demo.js"></script>
+   
 </body>
 </html>

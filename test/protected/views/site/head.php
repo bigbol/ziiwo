@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8" />
   <title>Musik | Web Application</title>
   <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -14,3 +14,16 @@
     <script src="<?PHP //echo JS_URL;?>ie/respond.min.js"></script>
     <script src="<?PHP //echo JS_URL;?>ie/excanvas.js"></script>
   <![endif]-->
+    
+    
+    
+    <script src="<?PHP echo JS_URL;?>jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="<?PHP echo JS_URL;?>bootstrap.js"></script>
+  <!-- App -->
+  <script src="<?PHP echo JS_URL;?>app.js"></script>  
+  <script src="<?PHP echo JS_URL;?>slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="<?PHP echo JS_URL;?>app.plugin.js"></script>
+  <script type="text/javascript" src="<?PHP echo JS_URL;?>jPlayer/jquery.jplayer.min.js"></script>
+  <script type="text/javascript" src="<?PHP echo JS_URL;?>jPlayer/add-on/jplayer.playlist.min.js"></script>
+  <script type="text/javascript" src="<?PHP echo JS_URL;?>jPlayer/demo.js"></script>
