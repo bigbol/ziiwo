@@ -5,15 +5,15 @@ $(document).ready(function(){
     cssSelectorAncestor: "#jp_container_N"
   }, [
     {
-      title:"Busted Chump",
+      title:"FAIRYTAIL",
       artist:"ADG3",
-      mp3:"http://flatfull.com/themes/assets/musics/adg3com_bustedchump.mp3",
+      mp3:"<?php echo REMOTE ;?>/MUSIC/FAIRYTAIL.mp3",
       poster: "images/m0.jpg"
     },
     {
-      title:"Chucked Knuckles",
+      title:"Busted Chump",
       artist:"3studios",
-      mp3:"http://flatfull.com/themes/assets/musics/adg3com_chuckedknuckles.mp3",
+      mp3:"http://flatfull.com/themes/assets/musics/adg3com_bustedchump.mp3",
       poster: "images/m0.jpg"
     },
     {
@@ -91,26 +91,30 @@ $(document).ready(function(){
 
   // video
 
-  $("#jplayer_1").jPlayer({
+    $("#jplayer_1").jPlayer({
     ready: function () {
       $(this).jPlayer("setMedia", {
-        title: "Big Buck Bunny",
-        m4v: "http://flatfull.com/themes/assets/video/big_buck_bunny_trailer.m4v",
-        ogv: "http://flatfull.com/themes/assets/video/big_buck_bunny_trailer.ogv",
-        webmv: "http://flatfull.com/themes/assets/video/big_buck_bunny_trailer.webm",
-        poster: "images/m41.jpg"
+        title: "Hold It",
+        m4v: "http://ziiiwoo-ziiwo.stor.sinaapp.com/VEDIO/Hold It -NIKAMILL.flv",
+        ogv: "http://ziiiwoo-ziiwo.stor.sinaapp.com/VEDIO/Hold It -NIKAMILL.flv",
+        webmv: "http://ziiiwoo-ziiwo.stor.sinaapp.com/VEDIO/Hold It -NIKAMILL.flv",
+        poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
       });
     },
-    swfPath: "js",
+    swfPath: "assets/js/jPlayer",
+    solution: "flash, html",
     supplied: "webmv, ogv, m4v",
     size: {
-      width: "100%",
-      height: "auto",
+      width: "640px",
+      height: "360px",
       cssClass: "jp-video-360p"
     },
-    globalVolume: true,
+    useStateClassSkin: true,
+    autoBlur: false,
     smoothPlayBar: true,
-    keyEnabled: true
+    keyEnabled: true,
+    remainingDuration: true,
+    toggleDuration: true
   });
 
 });

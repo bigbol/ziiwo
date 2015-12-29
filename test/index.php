@@ -4,8 +4,12 @@
 $yii=dirname(__FILE__).'/../yii-1.1.16/framework/yii.php';
 $config=dirname(__FILE__).'/protected/config/main.php';
 
+// define("CSS_URL","http://ziiiwoo-ziiwo.stor.sinaapp.com/assets/css");
+// define("IMG_URL","http://ziiiwoo-ziiwo.stor.sinaapp.com/assets/images/");
 define("CSS_URL","/assets/css");
 define("IMG_URL","/assets/images/");
+define("REMOTE_URL","http://ziiiwoo-ziiwo.stor.sinaapp.com");
+
 define("FONTS_URL","/assets/fonts/");
 define("LESS_URL","/assets/less/");
 define("JS_URL","/assets/js/");

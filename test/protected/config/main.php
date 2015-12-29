@@ -20,14 +20,15 @@ return array(
 	),
 
 	'modules'=>array(
-//		 uncomment the following to enable the Gii tool
+		// uncomment the following to enable the Gii tool
+		/*
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'123654',
+			'password'=>'Enter Your Password Here',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
-                'houtai',
+		*/
 	),
 
 	// application components
@@ -51,7 +52,14 @@ return array(
 		*/
 
 		// database settings are configured in database.php
-		'db'=>require(dirname(__FILE__).'/database.php'),
+        'db'=>array(
+                    'connectionString' => 'mysql:host=127.0.0.1;dbname=ziiwo',
+                    'emulatePrepare' => true,
+                    'username' => 'root',
+                    'password' => '123654',
+                    'charset' => 'utf8',
+                    'tablePrefix' => 'tb_',   //加入前缀名称fc_
+                    ),
 
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
@@ -80,6 +88,6 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
+		'adminEmail'=>'ziiwoo@126.com',
 	),
 );
