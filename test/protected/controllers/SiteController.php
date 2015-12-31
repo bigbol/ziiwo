@@ -42,12 +42,23 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-               $info = $this->Music_info->findAll(); 
-               $top = $this->Music_info->findAll(' 1 order by music_clicks DESC limit 5'); 
-               $new = $this->Music_info->findAll(array("order"=>"music_pubtime DESC","limit"=>"8")); 
-               
-//               var_dump($top);
-		$this->renderPartial('index',array('info'=>$info,'top'=>$top,'new'=>$new));
+       $info = $this->Music_info->findAll(); 
+       $top = $this->Music_info->findAll(' 1 order by music_clicks DESC limit 5'); 
+       $new = $this->Music_info->findAll(array("order"=>"music_pubtime DESC","limit"=>"8")); 
+       
+       foreach($top as $k=>$v){
+       		$mname = substr($v['music_name'], 0,-3);
+       		$music_list[] = array(
+		       	'title'=>"$mname",
+		       	'artist'=>"{$v['music_man']}",
+		       	'mp3'=>REMOTE_URL."/MUSIC/".$v['music_name'],
+		       	'poster'=>"images/".$v['music_cover']
+	       	);
+       }     
+        $musiclist=json_encode($music_list);
+      	// print_r($musiclist);
+      	// exit;
+		$this->renderPartial('index',array('info'=>$info,'top'=>$top,'new'=>$new,'musiclist'=>$musiclist));
 	}
         
         public function actionGenres()

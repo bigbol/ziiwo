@@ -31,10 +31,10 @@ class Music_info extends CActiveRecord
                 return '{{music_info}}';
 	}
         
-        public function selectMusic()
-        {
-                
-        }
+    public function selectMusic()
+    {
+            
+    }
         
         
         

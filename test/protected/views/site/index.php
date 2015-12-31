@@ -29,7 +29,7 @@
                   
                 <?php foreach ($info as $value) {?>  
                   <div class="row row-sm">
-                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
                       <div class="item">
                         <div class="pos-rlt">
                           <div class="bottom">
@@ -43,27 +43,46 @@
                               <i class="fa fa-star"></i>
                               <i class="fa fa-star-o text-muted"></i>
                             </div>
-                            <div class="center text-center m-t-n">
-                              <a href="#"><i class="icon-control-play i-2x"></i></a>
+                            <div id="jp_container_N" class="center text-center m-t-n">
+                              <a href="#" data-toggle="class">
+                              <!-- <a class="jp-play"><i class="icon-control-play i-2x text"></i></a> -->
+                              <!-- <a class="jp-pause hid"><i class="icon-control-pause i-2x text-active"></i></a> -->
+                                
+                                <i class="icon-control-play i-2x text"></i>
+                                <i class="icon-control-pause i-2x text-active"></i>
+                              </a>
                             </div>
-                            <div class="bottom padder m-b-sm">
+                           <!--  <div class="bottom padder m-b-sm">
                               <a href="#" class="pull-right">
                                 <i class="fa fa-heart-o"></i>
+                                <i class="fa fa-heart text-active text-danger"></i>
                               </a>
                               <a href="#">
                                 <i class="fa fa-plus-circle"></i>
+                                <i class="fa fa-check-circle text-active text-info"></i>
+                              </a>
+                            </div> -->
+                            <div class="bottom padder m-b-sm">
+                              <a href="#" class="pull-right active" data-toggle="class">
+                                <i class="fa fa-heart-o text"></i>
+                                <i class="fa fa-heart text-active text-danger"></i>
+                              </a>
+                              <a href="#" data-toggle="class">
+                                <i class="fa fa-plus-circle text"></i>
+                                <i class="fa fa-check-circle text-active text-info"></i>
                               </a>
                             </div>
+
                           </div>
                           <a href="#"><img src="<?PHP echo IMG_URL.$value["music_cover"];?>" alt="" class="r r-2x img-full"></a>
                         </div>
                         <div class="padder-v">
                           <a href="#" class="text-ellipsis"><?php echo $value["music_name"];?></a>
-                          <a href="#" class="text-ellipsis text-xs text-muted"><?php echo $value["music_men"];?></a>
+                          <a href="#" class="text-ellipsis text-xs text-muted"><?php echo $value["music_man"];?></a>
                         </div>
                       </div>
                     </div>
-                      
+                    
                    <?php  }?>   
                  
                   <div class="col-md-7">
@@ -266,50 +285,9 @@
   var myPlaylist = new jPlayerPlaylist({
     jPlayer: "#jplayer_N",
     cssSelectorAncestor: "#jp_container_N"
-  }, [
-    {
-      title:"FAIRYTAIL",
-      artist:"ADG3",
-      mp3:"<?php echo REMOTE_URL ;?>/MUSIC/FAIRYTAIL.mp3",
-      poster: "images/m0.jpg"
-    },
-    {
-      title:"Busted Chump",
-      artist:"3studios",
-      mp3:"http://flatfull.com/themes/assets/musics/adg3com_bustedchump.mp3",
-      poster: "images/m0.jpg"
-    },
-    {
-      title:"Cloudless Days",
-      artist:"ADG3 Studios",
-      mp3:"http://flatfull.com/themes/assets/musics/adg3com_cloudlessdays.mp3",
-      poster: "images/m0.jpg"
-    },
-    {
-      title:"Core Issues",
-      artist:"Studios",
-      mp3:"http://flatfull.com/themes/assets/musics/adg3com_coreissues.mp3",
-      poster: "images/m0.jpg"
-    },
-    {
-      title:"Cryptic Psyche",
-      artist:"ADG3",
-      mp3:"http://flatfull.com/themes/assets/musics/adg3com_crypticpsyche.mp3",
-      poster: "images/m0.jpg"
-    },
-    {
-      title:"Electro Freak",
-      artist:"Studios",
-      mp3:"http://flatfull.com/themes/assets/musics/adg3com_electrofreak.mp3",
-      poster: "images/m0.jpg"
-    },
-    {
-      title:"Freeform",
-      artist:"ADG",
-      mp3:"http://flatfull.com/themes/assets/musics/adg3com_freeform.mp3",
-      poster: "images/m0.jpg"
-    }
-  ], {
+  },
+  <?php echo $musiclist;?>
+  , {
     playlistOptions: {
       enableRemoveControls: true,
       autoPlay: true
@@ -321,7 +299,8 @@
     audioFullScreen: false
   });
   
-  $(document).on($.jPlayer.event.pause, myPlaylist.cssSelector.jPlayer,  function(){
+  $(document).on($.jPlayer.event.pause, myPlaylist.cssSelector.jPlayer,  function(e){
+    console.log(e);
     $('.musicbar').removeClass('animate');
     $('.jp-play-me').removeClass('active');
     $('.jp-play-me').parent('li').removeClass('active');
@@ -342,6 +321,7 @@
     $this.toggleClass('active');
     $this.parent('li').toggleClass('active');
     if( !$this.hasClass('active') ){
+      // alert('sasdas');
       myPlaylist.pause();
     }else{
       var i = Math.floor(Math.random() * (1 + 7 - 1));

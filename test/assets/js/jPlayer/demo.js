@@ -96,16 +96,18 @@ $(document).ready(function(){
       $(this).jPlayer("setMedia", {
         title: "Hold It",
         m4v: "http://ziiiwoo-ziiwo.stor.sinaapp.com/VEDIO/Hold It -NIKAMILL.flv",
-        ogv: "http://ziiiwoo-ziiwo.stor.sinaapp.com/VEDIO/Hold It -NIKAMILL.flv",
-        webmv: "http://ziiiwoo-ziiwo.stor.sinaapp.com/VEDIO/Hold It -NIKAMILL.flv",
-        poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+        // ogv: "http://ziiiwoo-ziiwo.stor.sinaapp.com/VEDIO/Hold It -NIKAMILL.flv",
+        // webmv: "http://ziiiwoo-ziiwo.stor.sinaapp.com/VEDIO/Hold It -NIKAMILL.flv",
+        poster: "http://ziiiwoo-ziiwo.stor.sinaapp.com/COVER/hold It.png"
       });
     },
     swfPath: "assets/js/jPlayer",
     solution: "flash, html",
     supplied: "webmv, ogv, m4v",
     size: {
-      width: "640px",
+      // width: "640px",
+      // height: "360px",
+       width: "1150px",
       height: "360px",
       cssClass: "jp-video-360p"
     },

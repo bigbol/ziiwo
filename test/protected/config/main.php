@@ -58,7 +58,7 @@ return array(
                     'username' => 'root',
                     'password' => '123654',
                     'charset' => 'utf8',
-                    'tablePrefix' => 'tb_',   //加入前缀名称fc_
+                    'tablePrefix' => 'zii_',   //加入前缀名称fc_
                     ),
 
 		'errorHandler'=>array(

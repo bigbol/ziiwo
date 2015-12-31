@@ -43,7 +43,7 @@
                 <div class="list-group list-group-alt">
                   <a href="#" class="media list-group-item">
                     <span class="pull-left thumb-sm">
-                      <img src="images/a0.png" alt="..." class="img-circle">
+                      <img src="<?PHP echo IMG_URL;?>/a0.png" alt="..." class="img-circle">
                     </span>
                     <span class="media-body block m-b-none">
                       Use awesome animate.css<br>
@@ -67,7 +67,7 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle bg clear" data-toggle="dropdown">
               <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
-                <img src="images/a0.png" alt="...">
+                <img src="<?PHP echo IMG_URL;?>/a0.png" alt="...">
               </span>
               John.Smith <b class="caret"></b>
             </a>
