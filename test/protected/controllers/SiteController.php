@@ -63,10 +63,10 @@ class SiteController extends Controller
 
 	public function actionIndex()
 	{
-		$_REQUEST['id'];
-       $top = $this->selectMusic->findAll($id); 
-       $new = $this->Music_info->findAll(array("order"=>"music_pubtime DESC","limit"=>"8")); 
-       }
+		$id = $_REQUEST['id'];
+       	$top = $this->selectMusic->selectMusic($id); 
+       	
+   	}
 
         
     public function actionGenres()
