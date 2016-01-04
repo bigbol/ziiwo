@@ -60,8 +60,16 @@ class SiteController extends Controller
       	// exit;
 		$this->renderPartial('index',array('info'=>$info,'top'=>$top,'new'=>$new,'musiclist'=>$musiclist));
 	}
+
+	public function actionIndex()
+	{
+		$_REQUEST['id'];
+       $top = $this->selectMusic->findAll($id); 
+       $new = $this->Music_info->findAll(array("order"=>"music_pubtime DESC","limit"=>"8")); 
+       }
+
         
-        public function actionGenres()
+    public function actionGenres()
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'

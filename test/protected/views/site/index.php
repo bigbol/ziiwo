@@ -44,12 +44,12 @@
                               <i class="fa fa-star-o text-muted"></i>
                             </div>
                             <div id="jp_container_N" class="center text-center m-t-n">
-                              <a href="#" data-toggle="class">
+                              <a href="#" data-toggle="class" class='console'>
                               <!-- <a class="jp-play"><i class="icon-control-play i-2x text"></i></a> -->
                               <!-- <a class="jp-pause hid"><i class="icon-control-pause i-2x text-active"></i></a> -->
                                 
-                                <i class="icon-control-play i-2x text"></i>
-                                <i class="icon-control-pause i-2x text-active"></i>
+                                <i class="icon-control-play i-2x text" musicid="<?php echo $value["id"];?>"></i>
+                                <i class="icon-control-pause i-2x text-active" musicname="<?php echo $value["id"];?>"></i>
                               </a>
                             </div>
                            <!--  <div class="bottom padder m-b-sm">
@@ -281,7 +281,6 @@
   <script type="text/javascript" src="<?PHP echo JS_URL;?>jPlayer/add-on/jplayer.playlist.min.js"></script>
   <script type="text/javascript">
     $(document).ready(function(){
-
   var myPlaylist = new jPlayerPlaylist({
     jPlayer: "#jplayer_N",
     cssSelectorAncestor: "#jp_container_N"
@@ -298,9 +297,8 @@
     keyEnabled: true,
     audioFullScreen: false
   });
-  
   $(document).on($.jPlayer.event.pause, myPlaylist.cssSelector.jPlayer,  function(e){
-    console.log(e);
+    // console.log(e);
     $('.musicbar').removeClass('animate');
     $('.jp-play-me').removeClass('active');
     $('.jp-play-me').parent('li').removeClass('active');
@@ -330,11 +328,37 @@
     
   });
 
+  $(".console").on('click',function(){
+    var musicid = $(this).children("i").attr("musicid");
+    console.log(musicid);
+    var s = document.createElement('script'); 
+    s.type = 'text/javascript'; 
+    s.async = true; 
+    s.src = 'http://yourdomain.com/script.js'; 
 
 
-  // video
-
+     // $("#jplayer_N").jPlayer({
+     // ready: function () {
+     //    $(this).jPlayer("setMedia", {
+     //      title:music_name,
+     //      artist:music_name,
+     //      mp3:"http://ziiiwoo-ziiwo.stor.sinaapp.com/MUSIC/"+music_name+'"'
+     //    });
+     //  },
+     //  swfPath: "js/jPlayer",
+     //  supplied: "webmv, ogv, m4v, oga, mp3",
+     //  });
+     // console.log($("#jplayer_N").jPlayer);
+     //   if( !$(this).hasClass('active') ){
+     //    myPlaylist.play();
+     //  }else{
+     //    myPlaylist.pause();
+     //  }
+ });
 });
+
+
+
 
   </script>
 </body>
